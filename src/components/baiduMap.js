@@ -62,7 +62,9 @@ export default {
     }
 
     $onDestroy() {
-      this.map.removeEventListener('click', this.clickListener)
+      if(this.map){
+        this.map.removeEventListener('click', this.clickListener)
+      }
     }
 
     addOverlay(marker) {
